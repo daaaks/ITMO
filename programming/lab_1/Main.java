@@ -1,7 +1,30 @@
+// package ru.itmo.prog.samples;
+
 import java.util.Arrays;
 
 public class Main {
-    public static void main() {
+    public static double Calculate(int d_i, float x_j) {
+        if (d_i == 8) {
+            return Math.atan(Math.cos(x_j)) / 2;
+        } else if (d_i == 6 || d_i == 10 || d_i == 14 || d_i == 16) {
+            double digit = Math.pow(0.25 / Math.pow(x_j / 3, 2), Math.pow(x_j, 2));
+            double power = (Math.sin(Math.pow(x_j / (2 / 3), 3)) - 1) / 4;
+            return Math.pow(digit, power);
+        } else {
+            return 0.5 * Math.asin(Math.cos(Math.pow(Math.cos(x_j), 2)));
+        }
+    }
+
+    public static void printArray(double[][] matrix) {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 12; j++) {
+                System.out.printf("%.3f\t", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
         int[] d = new int[9];
         for (int i = 0; i < 9; i++) {
             d[i] = 6 + i * 2;
@@ -21,25 +44,12 @@ public class Main {
         double[][] b = new double[9][12];
         for (int i = 0; i < 9; i++){
             for (int j = 0; j < 12; j++) {
-                if (d[i] == 8) {
-                    b[i][j] = Math.atan(Math.cos(x[j])) / 2;
-                } else if (d[i] == 6 || d[i] == 10 || d[i] == 14 || d[i] == 16) {
-                    double digit = Math.pow(0.25 / Math.pow(x[j] / 3, 2), Math.pow(x[j], 2));
-                    double power = (Math.sin(Math.pow(x[j] / (2 / 3), 3)) - 1) / 4;
-                    b[i][j] = Math.pow(digit, power);
-                } else {
-                    b[i][j] = 0.5 * Math.asin(Math.cos(Math.pow(Math.cos(x[j]), 2)));
-                }
+                b[i][j] = Calculate(d[i], x[j]);
             }
         }
 
         // Вывод массива b
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 12; j++) {
-                System.out.printf("%.3f\t", b[i][j]);
-            }
-            System.out.println();
-        }
+        printArray(b);
     }
 
 }
