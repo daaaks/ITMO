@@ -18,7 +18,7 @@ public class Main {
     public static void printArray(double[][] matrix) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 12; j++) {
-                System.out.printf("%.3f\t", matrix[i][j]);
+                System.out.printf("%10.3f", matrix[i][j]);
             }
             System.out.println();
         }
