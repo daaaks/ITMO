@@ -1,5 +1,3 @@
-// package ru.itmo.prog.samples;
-
 import java.util.Arrays;
 
 public class Main {
