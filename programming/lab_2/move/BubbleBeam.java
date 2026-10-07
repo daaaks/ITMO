@@ -3,10 +3,11 @@ package move;
 import ru.ifmo.se.pokemon.*;
 import pokemon.*;
 
-public class BubbleBeam extends SpecialMove{
+public final class BubbleBeam extends SpecialMove{
     public BubbleBeam() {
         super(Type.WATER, 65, 100);
     }
+    
     // Bubble Beam наносит урон и 10% шанс понизить скорость противника на 1 уровень
 
     @Override public void applyOppEffects(Pokemon def) {

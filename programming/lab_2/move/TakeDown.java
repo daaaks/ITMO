@@ -3,7 +3,7 @@ package move;
 import ru.ifmo.se.pokemon.*;
 import pokemon.*;
 
-public class TakeDown extends PhysicalMove {
+public final class TakeDown extends PhysicalMove {
     public TakeDown() {
         super(Type.NORMAL, 90, 85);
     }
